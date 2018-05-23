@@ -1,0 +1,32 @@
+# This references the default golang container from
+# the Docker Hub: https://registry.hub.docker.com/u/library/golang/
+# If you want Google's container you would reference google/golang
+# Read more about containers on our dev center
+# http://devcenter.wercker.com/docs/containers/index.html
+box: golang
+build:
+  steps:
+    # Sets the go workspace and places you package
+    # at the right place in the workspace tree
+    - setup-go-workspace
+    - script:
+        name: buildall
+        code: |
+          ./buildAll.sh
+    # # Gets the dependencies
+    # - script:
+    #     name: go get
+    #     code: |
+    #       go get
+    #
+    # # Build the project
+    # - script:
+    #     name: go build
+    #     code: |
+    #       go build ./...
+    #
+    # # Test the project
+    # - script:
+    #     name: go test
+    #     code: |
+    #       go test ./...
