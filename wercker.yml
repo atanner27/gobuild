@@ -12,6 +12,7 @@ build:
     - script:
         name: buildall
         code: |
+          chmod u+x buildAll.sh
           ./buildAll.sh
     # # Gets the dependencies
     # - script:
