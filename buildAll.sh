@@ -1,1 +1,1 @@
-go build hello-world.go
+go build hello.go
